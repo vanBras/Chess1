@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hollander.Common.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Hollander.Common.Logging.Extensions">
+            <summary>
+            Helpers for <see cref="T:Hollander.Common.Logging.ILog"/> interface calls. 
+            </summary>
+            <remarks>
+            When possible all methods use the params args constructor for optimization.
+            It delays string format until really needed due to its log level.
+            </remarks>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugStart(Hollander.Common.Logging.ILog,System.String)">
+            <summary>
+            Logs the start of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugStart(Hollander.Common.Logging.ILog,System.String,System.Object,System.String)">
+            <summary>
+            Logs the start and argument of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="argument">The argument name from the logged value of <paramref name="argumentValue"/>.</param>
+            <param name="argumentValue">The argument Object value belonging to <paramref name="argument"/>.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugStart(Hollander.Common.Logging.ILog,System.String,System.Object,System.String,System.Object,System.String)">
+            <summary>
+            Logs the start and arguments of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="argument1">The argument name from the logged value of <paramref name="argument1Value"/>.</param>
+            <param name="argument1Value">The argument Object value belonging to <paramref name="argument1"/>.</param>
+            <param name="argument2">The argument name from the logged value of <paramref name="argument2Value"/>.</param>
+            <param name="argument2Value">The argument Object value belonging to <paramref name="argument2"/>.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugStart(Hollander.Common.Logging.ILog,System.String,System.Object,System.String,System.Object,System.String,System.Object,System.String)">
+            <summary>
+            Logs the start and arguments of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="argument1">The argument name from the logged value of <paramref name="argument1Value"/>.</param>
+            <param name="argument1Value">The argument Object value belonging to <paramref name="argument1"/>.</param>
+            <param name="argument2">The argument name from the logged value of <paramref name="argument2Value"/>.</param>
+            <param name="argument2Value">The argument Object value belonging to <paramref name="argument2"/>.</param>
+            <param name="argument3">The argument name from the logged value of <paramref name="argument3Value"/>.</param>
+            <param name="argument3Value">The argument Object value belonging to <paramref name="argument3"/>.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugStart(Hollander.Common.Logging.ILog,System.String,System.Object,System.String,System.Object,System.String,System.Object,System.String,System.Object,System.String)">
+            <summary>
+            Logs the start and arguments of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="argument1">The argument name from the logged value of <paramref name="argument1Value"/>.</param>
+            <param name="argument1Value">The argument Object value belonging to <paramref name="argument1"/>.</param>
+            <param name="argument2">The argument name from the logged value of <paramref name="argument2Value"/>.</param>
+            <param name="argument2Value">The argument Object value belonging to <paramref name="argument2"/>.</param>
+            <param name="argument3">The argument name from the logged value of <paramref name="argument3Value"/>.</param>
+            <param name="argument3Value">The argument Object value belonging to <paramref name="argument3"/>.</param>
+            <param name="argument4">The argument name from the logged value of <paramref name="argument4Value"/>.</param>
+            <param name="argument4Value">The argument Object value belonging to <paramref name="argument4"/>.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Debug(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Debug(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="format">A String containing format items</param>
+            <param name="args">An Object array containing objects to format<para><see cref="!:Args"/></para></param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugEnd(Hollander.Common.Logging.ILog,System.String)">
+            <summary>
+            Logs the end of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugEnd(Hollander.Common.Logging.ILog,System.Object,System.String)">
+            <summary>
+            Logs the end of a method or property call with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="result">The end result Object of a method or property call</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugTrace(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.DebugTrace(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Debug"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Info(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Information"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Info(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Information"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.InfoFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Information"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="format">A String containing format items</param>
+            <param name="args">An Object array containing objects to format<para><see cref="!:Args"/></para></param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.InfoTrace(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Information"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.InfoTrace(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Information"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Warn(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Warning"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Warn(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Warning"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.WarnFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Warning"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="format">A String containing format items</param>
+            <param name="args">An Object array containing objects to format<para><see cref="!:Args"/></para></param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.WarnTrace(Hollander.Common.Logging.ILog,System.String,System.String)">
+            <summary>
+            Logs message with the <see cref="F:Hollander.Common.Logging.LogEventType.Warning"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.WarnTrace(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and message with the <see cref="F:Hollander.Common.Logging.LogEventType.Warning"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="message">The message to log without format items.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Exception(Hollander.Common.Logging.ILog,System.Exception,System.String)">
+            <summary>
+            Logs a exception with the <see cref="F:Hollander.Common.Logging.LogEventType.Error"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.Exception(Hollander.Common.Logging.ILog,System.String,System.Exception,System.String)">
+            <summary>
+            Logs a exception and extra information with the <see cref="F:Hollander.Common.Logging.LogEventType.Error"/> level.
+            </summary>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="extraInformation">Additional information to add to the log message.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.LogExceptionFilter(Hollander.Common.Logging.ILog,System.Exception,System.String)">
+            <summary>
+            Exception filter that logs a exception with the <see cref="F:Hollander.Common.Logging.LogEventType.Error"/> level.
+            Preferable usage to catching and rethrowing because they leave the stack unharmed.
+            If the exception later causes the stack to be dumped, you can see where it originally came from, rather than just the last place it was rethrown.
+            A common and accepted form of "abuse" to use exception filters for side effects; e.g. logging.
+            They can inspect an exception "flying by" without intercepting its course.
+            The filter is a call to a false-returning helper function which executes the side effects.
+            </summary>
+            <example>
+            try { ... } 
+            catch (Exception exc) when(LogExceptionFilter(exc)) { }
+            </example>
+            <returns>false</returns>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Extensions.LogAndSkipException(Hollander.Common.Logging.ILog,System.Exception,System.String)">
+            <summary>
+            Logs a exception with the <see cref="F:Hollander.Common.Logging.LogEventType.Error"/> level.
+            </summary>
+            <example>
+            Remain the exception unhandled:
+            try 
+            {
+                var responseText = await streamTask;
+                return responseText;
+            } 
+            catch (System.Net.Http.HttpRequestException exc) when(LogAndSkipException(exc))
+            {
+                return "Site Moved";
+            }
+            
+            Mark the exception as handled:
+            try 
+            {
+                var responseText = await streamTask;
+                return responseText;
+            } 
+            catch (System.Net.Http.HttpRequestException exc) if(LogAndSkipException(exc))
+            {
+                return "Site Moved";
+            } 
+            </example>
+            <param name="logger">The <see cref="T:Hollander.Common.Logging.ILog"/> interface used by the application to log messages.</param>
+            <param name="exception">The exception to log, including its stack trace.</param>
+            <param name="caller">The method or property name of the caller to the method.</param>
+        </member>
+        <member name="T:Hollander.Common.Logging.ILog">
+            <summary>
+            The interface to be implemented with a logger framework.
+            </summary>
+        </member>
+        <member name="M:Hollander.Common.Logging.ILog.Log(Hollander.Common.Logging.LogEntry)">
+            <summary>
+            Logs a message with the provided <see cref="T:Hollander.Common.Logging.LogEventType"/> level.
+            Additional helpers are supplied using <see cref="T:Hollander.Common.Logging.Extensions"/>.
+            </summary>
+            <remarks>
+            This is the only member to be implemented.
+            It simplifies the effort for mocking the logger or adding a new logger framework.
+            </remarks>
+            <param name="entry"></param>
+        </member>
+        <member name="T:Hollander.Common.Logging.IAdapterFactory">
+            <summary>
+            This interface is used by client applications to request logger instances.
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.IAdapterFactory.UseStaticLoggers">
+            <summary>
+            For most loggers the advise is one static logger for each type.
+            The most common way to achieve this is, creating a static <see cref="T:Hollander.Common.Logging.ILog"/> field with the <see cref="T:Hollander.Common.Logging.LogManager"/>.
+            With static loggers it uses a <see cref="T:System.Collections.Generic.Dictionary`2"/> for retrieving static loggers.
+            This becomes handy when using dependency injection and the loggers are resolved during startup.
+            </summary>
+            <value>
+            When <c>false</c> the <see cref="T:Hollander.Common.Logging.IAdapterFactory"/> is no longer responsible for maintaining static loggers.
+            This is the most common usage in combination with the <see cref="T:Hollander.Common.Logging.LogManager"/>.
+            When <c>true</c> the <see cref="T:Hollander.Common.Logging.IAdapterFactory"/> returns static loggers.
+            This works well for applications where loggers are initialized on startup of the application.
+            In a web application where most of the objects have a per request lifecycle this could become a problem.
+            In this case the <see cref="T:System.Collections.Generic.Dictionary`2"/> is used on each request.
+            This depends on how objects are created using factories or dependency injection and how they are resolved.
+            </value>
+        </member>
+        <member name="M:Hollander.Common.Logging.IAdapterFactory.GetLogger(System.String)">
+            <summary>
+            Retrieves or creates a named logger.
+            </summary>
+            <param name="name">The name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.IAdapterFactory.GetLogger(System.Type)">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.IAdapterFactory.GetLogger(System.String)"/>.
+            </summary>
+            <param name="type">The full name will be used as the name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.IAdapterFactory.GetLogger``1">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.ILogManager.GetLogger(System.String)" />.
+            </summary>
+            <typeparam name="T">The type full name will be used as the name of the logger to retrieve.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log.Args(System.Object[])">
+            <summary>
+            Helper creating object format items for <see cref="M:Hollander.Common.Logging.Extensions.DebugFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)"/>, <see cref="M:Hollander.Common.Logging.Extensions.InfoFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)"/> and <see cref="M:Hollander.Common.Logging.Extensions.WarnFormat(Hollander.Common.Logging.ILog,System.String,System.Object[],System.String)"/>
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hollander.Common.Logging.LogEntry">
+            <summary>
+            Immutable DTO that contains the log information.
+            Additional helpers are supplied using <see cref="T:Hollander.Common.Logging.Extensions"/>.
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.LogEntry.Severity">
+            <summary>
+            The <see cref="T:Hollander.Common.Logging.LogEventType"/> for logging at a certain level.
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.LogEntry.Message">
+            <summary>
+            The String containing zero or more format items.
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.LogEntry.Exception">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.LogEntry.Args">
+            <summary>
+            The Object array containing zero or more objects to format.
+            </summary>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogEntry.#ctor(Hollander.Common.Logging.LogEventType,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.Common.Logging.LogEntry"/> class.
+            </summary>
+            <param name="severity"></param>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogEntry.#ctor(Hollander.Common.Logging.LogEventType,System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.Common.Logging.LogEntry"/> class.
+            </summary>
+            <param name="severity"></param>
+            <param name="format">A String containing zero or more format items</param>
+            <param name="args">An Object array containing zero or more objects to format.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogEntry.#ctor(Hollander.Common.Logging.LogEventType,System.Exception,System.String,System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.Common.Logging.LogEntry"/> class.
+            </summary>
+            <param name="severity"></param>
+            <param name="exception"></param>
+            <param name="format">A String containing zero or more format items</param>
+            <param name="args">An Object array containing zero or more objects to format.</param>
+            <exception cref="T:System.ArgumentNullException">format</exception>
+            <exception cref="T:System.ArgumentException">empty - format</exception>
+        </member>
+        <member name="T:Hollander.Common.Logging.LogEventType">
+            <summary>
+            Defines the default set of levels recognized by the system.
+            </summary>
+        </member>
+        <member name="F:Hollander.Common.Logging.LogEventType.Debug">
+            <summary>
+            The <see cref="F:Hollander.Common.Logging.LogEventType.Debug" /> level designates fine-grained informational
+            events that are most useful to debug an application.
+            </summary>
+        </member>
+        <member name="F:Hollander.Common.Logging.LogEventType.Information">
+            <summary>
+            The <see cref="F:Hollander.Common.Logging.LogEventType.Information" /> level designates informational messages that
+            highlight the progress of the application at coarse-grained level.
+            </summary>
+        </member>
+        <member name="F:Hollander.Common.Logging.LogEventType.Warning">
+            <summary>
+            The <see cref="F:Hollander.Common.Logging.LogEventType.Warning" /> level designates potentially harmful situations.
+            </summary>
+        </member>
+        <member name="F:Hollander.Common.Logging.LogEventType.Error">
+            <summary>
+            The <see cref="F:Hollander.Common.Logging.LogEventType.Error" /> level designates error events that might
+            still allow the application to continue running.
+            </summary>
+        </member>
+        <member name="F:Hollander.Common.Logging.LogEventType.Fatal">
+            <summary>
+            The <see cref="F:Hollander.Common.Logging.LogEventType.Fatal" /> level designates very severe error events
+            that will presumably lead the application to abort.
+            </summary>
+        </member>
+        <member name="T:Hollander.Common.Logging.LogManager">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.LogManager.AdapterFactory">
+            <summary>
+            Gets or sets
+            </summary>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogManager.GetLogger(System.String)">
+            <summary>
+            Retrieves or creates a named logger.
+            </summary>
+            <param name="name">The name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogManager.GetLogger(System.Type)">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.LogManager.GetLogger(System.String)"/>.
+            </summary>
+            <param name="type">The full name will be used as the name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.LogManager.GetLogger``1">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.ILogManager.GetLogger(System.String)" />.
+            </summary>
+            <typeparam name="T">The type full name will be used as the name of the logger to retrieve.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Hollander.Common.Logging.NullAdapter">
+            <summary>
+            Class implementing the Null Object pattern.
+            It can be used when the actual logger is unknown or absent.
+            </summary>
+            <seealso cref="T:Hollander.Common.Logging.ILog" />
+        </member>
+        <member name="M:Hollander.Common.Logging.NullAdapter.Log(Hollander.Common.Logging.LogEntry)">
+            <summary>
+            A placeholder implementation for <see cref="T:Hollander.Common.Logging.ILog"/> doing nothing.
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="T:Hollander.Common.Logging.NullAdapterFactory">
+            <summary>
+            Class implementing the Null Object pattern.
+            It can be used when the actual logger is unknown or absent.
+            </summary>
+            <seealso cref="T:Hollander.Common.Logging.IAdapterFactory" />
+        </member>
+        <member name="P:Hollander.Common.Logging.NullAdapterFactory.UseStaticLoggers">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Hollander.Common.Logging.NullAdapterFactory.GetLogger(System.String)">
+            <summary>
+            Returns a <see cref="T:Hollander.Common.Logging.NullAdapter"/>.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.NullAdapterFactory.GetLogger(System.Type)">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.NullAdapterFactory.GetLogger(System.String)" />.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.NullAdapterFactory.GetLogger``1">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.NullAdapterFactory.GetLogger(System.String)" />.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

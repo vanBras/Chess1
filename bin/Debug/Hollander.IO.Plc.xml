@@ -1,0 +1,1384 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hollander.IO.Plc</name>
+    </assembly>
+    <members>
+        <member name="T:Hollander.IO.Plc.AbstractPlcItemAddress">
+            <summary>
+            An abstract class forcing implementers to override the ToString() method.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcItemAddress.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents the current <see cref="T:System.Object" />.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents the current <see cref="T:System.Object" />.
+            </returns>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcItemAddress.Datatype">
+            <summary>
+            Gets the datatype.
+            </summary>
+            <value>The datatype.</value>
+        </member>
+        <member name="T:Hollander.IO.Plc.AbstractPlcMonitor">
+            <summary>
+            Class provides the basic functionality for a plc monitor
+            </summary>
+        </member>
+        <member name="T:Hollander.IO.Plc.AbstractPlcMonitor.CancellationReason">
+            <summary>
+            enumerate to indicate what the reason was to cancel the read thread
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.ScanrangeList">
+            <summary>
+            </summary>
+        </member>
+        <member name="E:Hollander.IO.Plc.AbstractPlcMonitor.ConnectionStateChanged">
+            <summary>
+            Event indicating that the state of the connection has changed
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.ExpectedControllerType">
+            <summary>
+            Gets the expected type of the controller.
+            </summary>
+            <value>The expected type of the controller.</value>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.Controller">
+            <summary>
+            Gets or sets the controller.
+            </summary>
+            <value>The controller.</value>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.StartOnAdding">
+            <summary>
+            Gets or sets whether the monitor will start on adding items
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.Running">
+            <summary>
+            Gets whether the monitor is running
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.AbstractPlcMonitor.AutoReconnect">
+            <summary>
+            Gets or sets a value indicating whether to automatically reconnect.
+            </summary>
+            <value>
+              <c>true</c> if to automatically reconnect; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.#ctor(Hollander.IO.Plc.IController,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AbstractPlcMonitor" /> class.
+            </summary>
+            <param name="controller">The controller.</param>
+            <param name="scanCycletime">The scan cycletime.</param>
+            <param name="startOnAdding">Whether or not monitoring should start upon adding items.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when the controller is <c>NULL</c>.</exception>
+            <exception cref="T:Hollander.IO.Plc.PlcCommunicationException">Unable to create Plc Communication. Check the inner exception for details.</exception>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AbstractPlcMonitor"/> class.
+            </summary>
+            <remarks>
+            Needs to be used in combination with <see cref="M:Hollander.IO.Plc.AbstractPlcMonitor.Initialize(Hollander.IO.Plc.IController,System.Int32,System.Boolean)"/>
+            </remarks>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Initialize(Hollander.IO.Plc.IController,System.Int32,System.Boolean)">
+            <summary>
+            Initializes the specified controller.
+            </summary>
+            <param name="controller">The controller.</param>
+            <param name="scanCycletime">The scan cycletime.</param>
+            <param name="startOnAdding">if set to <c>true</c> [start on adding].</param>
+            <exception cref="T:Hollander.IO.Plc.PlcCommunicationException">Unable to create Plc Communication. Check inner exception for details.</exception>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:Hollander.IO.Plc.AbstractPlcMonitor"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Stop">
+            <summary>
+            Pauses the monitor.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Start">
+            <summary>
+            Continues the monitor.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.AddItemToMonitor(System.String,Hollander.IO.Plc.PlcItemValueChangedHandler)">
+            <summary>
+            Adds an item to be monitored.
+            </summary>
+            <param name="plcItemAddressString">The address of the item to be monitored.</param>
+            <param name="plcItemValueChangedHandler">The handler to be called upon changes in the value of the monitored item.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.AddItemToMonitor(Hollander.IO.Plc.IPlcItemAddress,Hollander.IO.Plc.PlcItemValueChangedHandler)">
+            <summary>
+            Method adds the given address as a new item to monitor, linking
+            the handler to it for changes in its value.
+            </summary>
+            <param name="plcItemAddress">
+            The address of the item to be monitored.
+            </param>
+            <param name="plcItemValueChangedHandler">
+            The handler to be called upon changes in the value of the monitored item.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Init">
+            <summary>
+            Inits this instance.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.ExpandScanrangeWithItem(Hollander.IO.Plc.ItemChangeHandler)">
+            <summary>
+            Expands the scanrange with item.
+            </summary>
+            <param name="plcItemChangeIndication">The PLC item change indication.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.BackgroundReadWorkerDoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            The DoWork callback method for the background worker that does the reading.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.DoWorkEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.BackgroundReadWorkerRunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Callback to be called by the reading background worker upon completing the DoWork method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.RunWorkerCompletedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.BackgroundReconnectWorkerDoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            The DoWork callback method for the background worker that tries to reconnect to the Plc.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.DoWorkEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.BackgroundReconnectWorkerRunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Callback to be called by the reconnecting background worker upon completing the DoWork method.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.ComponentModel.RunWorkerCompletedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.SetSingleScanRange(Hollander.IO.Plc.IPlcItemAddress,System.Object)">
+            <summary>
+            Sets the single scan range.
+            </summary>
+            <param name="plcItemAddress">The PLC item address.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.ReadScanranges(System.Collections.Generic.List{Hollander.IO.Plc.IItemScanrange})">
+            <summary>
+            Method to read the scan ranges.
+            </summary>
+            <param name="tmpScanrangeList">The TMP scanrange list.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.WriteDigital(System.String,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+            <exception cref="T:Hollander.IO.Plc.AddressNotSupportedException"></exception>
+            <exception cref="T:Hollander.IO.Plc.InvalidAddressException"></exception>
+            <exception cref="T:Hollander.IO.Plc.TypeNotSupportedException"></exception>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.WriteDigital(Hollander.IO.Plc.IPlcItemAddress,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+            <exception cref="T:Hollander.IO.Plc.AddressNotSupportedException"></exception>
+            <exception cref="T:Hollander.IO.Plc.InvalidAddressException"></exception>
+            <exception cref="T:Hollander.IO.Plc.TypeNotSupportedException"></exception>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.ConvertPlcItemAdressString(System.String)">
+            <summary>
+            Converts a string to the appropriate plc item address
+            </summary>
+            <param name="plcItemAddressString">The string representation of the plc item address.</param>
+            <returns>A plc item address.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.CreateNewItemScanrange(Hollander.IO.Plc.ItemChangeHandler)">
+            <summary>
+            Method creates a new scanrange for items, based on the given item change handler.
+            </summary>
+            <param name="plcItemChangeIndication">The initial handler for the scanrange to be based upon.</param>
+            <returns>The new scanrange.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.CreatePlcItemAddress(System.String)">
+            <summary>
+            Creates a type specific plc item address
+            </summary>
+            <param name="plcItemAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AbstractPlcMonitor.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.ConnectionStateChangedEventArgs">
+            <summary>
+            Holds the event args for the ConnectionstateChangedHandler
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.ConnectionStateChangedEventArgs.Connected">
+            <summary>
+            Gets a value indicating whether controller is connected.
+            </summary>
+            <value>
+              <c>true</c> if the controller is connected; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Hollander.IO.Plc.ConnectionStateChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ConnectionStateChangedEventArgs" /> class.
+            </summary>
+            <param name="connected">if set to <c>true</c> the controller is connected.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.MonitoredItemConnectionStateChangeEventArgs">
+            <summary>
+            Class to contain the arguments for the monitored item connection state change event
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.MonitoredItemConnectionStateChangeEventArgs.Connected">
+            <summary>
+            Gets the state of the connection
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.MonitoredItemConnectionStateChangeEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.MonitoredItemConnectionStateChangeEventArgs"/>
+            class
+            </summary>
+            <param name="connected"></param>
+        </member>
+        <member name="T:Hollander.IO.Plc.MonitoredItemValueChangedEventArgs">
+            <summary>
+            Class to contain the arguments for the monitored item value changed event
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.MonitoredItemValueChangedEventArgs.NewValue">
+            <summary>
+            Gets the new value
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.MonitoredItemValueChangedEventArgs.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.MonitoredItemValueChangedEventArgs"/>
+            class.
+            </summary>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcItemValueChangedEventArgs">
+            <summary>
+            Class containing the event arguments for the <see cref="T:Hollander.IO.Plc.PlcItemValueChangedHandler"/>
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcItemValueChangedEventArgs.PlcAddress">
+            <summary>
+            Gets the PLC address.
+            </summary>
+            <value>
+            The PLC address.
+            </value>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcItemValueChangedEventArgs.NewValue">
+            <summary>
+            Gets the new value.
+            </summary>
+            <value>
+            The new value.
+            </value>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcItemValueChangedEventArgs.#ctor(Hollander.IO.Plc.IPlcItemAddress,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcItemValueChangedEventArgs" /> class.
+            </summary>
+            <param name="plcAddress">The PLC address.</param>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.ValueChangedEventArgs`1">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="P:Hollander.IO.Plc.ValueChangedEventArgs`1.NewValue">
+            <summary>
+            Gets or sets the new value.
+            </summary>
+            <value>
+            The new value.
+            </value>
+        </member>
+        <member name="M:Hollander.IO.Plc.ValueChangedEventArgs`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ValueChangedEventArgs`1"/> class.
+            </summary>
+            <param name="newValue">The new value.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.AddressNotSupportedException">
+            <summary>
+            Exception to be thrown when an address is specified that is not (yet) supported by the controller.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AddressNotSupportedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AddressNotSupportedException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.AddressNotSupportedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AddressNotSupportedException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AddressNotSupportedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AddressNotSupportedException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the <paramref name="innerException" />
+            parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a
+            catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.AddressNotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.AddressNotSupportedException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.ConnectionException">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.ConnectionException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ConnectionException" /> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.ConnectionException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ConnectionException" /> class.
+            </summary>
+            <param name="message">Message providing additional information.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ConnectionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ConnectionException" /> class.
+            </summary>
+            <param name="message">Message providing additional information.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ConnectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ConnectionException" /> class.
+            </summary>
+            <param name="info">The info.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.IController">
+            <summary>
+            Interface defining the general interface of a controller.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.Connect">
+            <summary>
+            Connects this instance.
+            </summary>
+            <returns>Returns whether a connection could be made</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.Disconnect">
+            <summary>
+            Disconnects this instance.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.CreatePlcItemAddress(System.String)">
+            <summary>
+            Creates the PLC item address.
+            </summary>
+            <param name="addressString">The address string.</param>
+            <returns>A type specific plc item address.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadDigital(System.String,System.Boolean@)">
+            <summary>
+            Method reads a digital value from the controller from the given address
+            and returns it through the referenced argument.
+            </summary>
+            <param name="startAddress">Address of the digital value.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadDigital(Hollander.IO.Plc.IPlcItemAddress,System.Boolean@)">
+            <summary>
+            Method reads a digital value from the controller from the given address
+            and returns it through the referenced argument.
+            </summary>
+            <param name="startAddress">Address of the digital value.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteDigital(System.String,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteDigital(Hollander.IO.Plc.IPlcItemAddress,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadString(System.String,System.String@)">
+            <summary>
+            Method reads a string value from the controller from the given address
+            and returns it through the referenced argument.
+            </summary>
+            <param name="startAddress">Starting address of the string.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadString(Hollander.IO.Plc.IPlcItemAddress,System.String@)">
+            <summary>
+            Method reads a string value from the controller from the given address
+            and returns it through the referenced argument.
+            </summary>
+            <param name="startAddress">Starting address of the string.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteString(System.String,System.String)">
+            <summary>
+            Method writes a string value to the controller to the given address.
+            </summary>
+            <param name="startAddress">Starting address of the string.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteString(Hollander.IO.Plc.IPlcItemAddress,System.String)">
+            <summary>
+            Method writes a string value to the controller to the given address.
+            </summary>
+            <param name="startAddress">Starting address of the string.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadByte(System.String,System.Byte@)">
+            <summary>
+            Method reads a Byte from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the value.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadByte(Hollander.IO.Plc.IPlcItemAddress,System.Byte@)">
+            <summary>
+            Method reads a Byte from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the value.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteByte(System.String,System.Byte)">
+            <summary>
+            Method writes the given Byte value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the Byte.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteByte(Hollander.IO.Plc.IPlcItemAddress,System.Byte)">
+            <summary>
+            Method writes the given Byte value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the Byte.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadWord(System.String,System.UInt16@)">
+            <summary>
+            Method reads a Word from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the Word.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadWord(Hollander.IO.Plc.IPlcItemAddress,System.UInt16@)">
+            <summary>
+            Method reads a Word from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the Word.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteWord(System.String,System.UInt16)">
+            <summary>
+            Method writes the given Word value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the Word.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteWord(Hollander.IO.Plc.IPlcItemAddress,System.UInt16)">
+            <summary>
+            Method writes the given Word value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the Word.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadDWord(System.String,System.UInt32@)">
+            <summary>
+            Method reads a DWord from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the DWord.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadDWord(Hollander.IO.Plc.IPlcItemAddress,System.UInt32@)">
+            <summary>
+            Method reads a DWord from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the DWord.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteDWord(System.String,System.UInt32)">
+            <summary>
+            Method writes the given DWord value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the DWord</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteDWord(Hollander.IO.Plc.IPlcItemAddress,System.UInt32)">
+            <summary>
+            Method writes the given DWord value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the DWord</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadByteBuffer(System.String,System.UInt16,System.Byte[]@)">
+            <summary>
+            Method reads a byte buffer from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Start address of the buffer to read.</param>
+            <param name="expectedNumberofOfBytes">Expected number of bytes to read</param>
+            <param name="byteBuffer">The read buffer. It should be checked for the actual number of bytes read.</param>
+            <returns>Returns whether the buffer could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadByteBuffer(Hollander.IO.Plc.IPlcItemAddress,System.UInt16,System.Byte[]@)">
+            <summary>
+            Method reads a byte buffer from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Start address of the buffer to read.</param>
+            <param name="expectedNumberofOfBytes">Expected number of bytes to read</param>
+            <param name="byteBuffer">The read buffer. It should be checked for the actual number of bytes read.</param>
+            <returns>Returns whether the buffer could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteByteBuffer(System.String,System.Byte[])">
+            <summary>
+            Method writes the given byte buffer to the controller at the given address.
+            </summary>
+            <param name="startAddress">Start address to write the buffer to.</param>
+            <param name="byteBuffer">Buffer containing the data to write to the controller.</param>
+            <returns>Returns whether the buffer could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteByteBuffer(Hollander.IO.Plc.IPlcItemAddress,System.Byte[])">
+            <summary>
+            Method writes the given byte buffer to the controller at the given address.
+            </summary>
+            <param name="startAddress">Start address to write the buffer to.</param>
+            <param name="byteBuffer">Buffer containing the data to write to the controller.</param>
+            <returns>Returns whether the buffer could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadFloat(System.String,System.Single@)">
+            <summary>
+            Method reads a float from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the float.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadFloat(Hollander.IO.Plc.IPlcItemAddress,System.Single@)">
+            <summary>
+            Method reads a float from the controller from the given start address.
+            </summary>
+            <param name="startAddress">Address of the float.</param>
+            <param name="value">The read value.</param>
+            <returns>Returns whether the value could be read.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteFloat(System.String,System.Single)">
+            <summary>
+            Method writes the given float value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the float</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteFloat(Hollander.IO.Plc.IPlcItemAddress,System.Single)">
+            <summary>
+            Method writes the given float value to the controller at the given address.
+            </summary>
+            <param name="startAddress">Address of the float</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadObject(Hollander.IO.Plc.IPlcItemAddress,System.Object@)">
+            <summary>
+            Method reads a object from the controller from the given start address.
+            </summary>
+            <param name="startAddress">The start address.</param>
+            <param name="value">The value.</param>
+            <returns>
+            Returns whether the value could be read.
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteObject(Hollander.IO.Plc.IPlcItemAddress,System.Object)">
+            <summary>
+            Method writes the given object value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The start address.</param>
+            <param name="value">The value.</param>
+            <returns>
+            Returns whether the value could be written
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.ReadObject(System.String,System.Object@)">
+            <summary>
+            Method reads a object from the controller from the given start address.
+            </summary>
+            <param name="addressString">The address string.</param>
+            <param name="value">The value.</param>
+            <returns>
+            Returns whether the value could be read.
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IController.WriteObject(System.String,System.Object)">
+            <summary>
+            Method writes the given object value to the controller at the given address.
+            </summary>
+            <param name="addressString">The address string.</param>
+            <param name="value">The value.</param>
+            <returns>
+            Returns whether the value could be written
+            </returns>
+        </member>
+        <member name="T:Hollander.IO.Plc.IItemScanrange">
+            <summary>
+            Interface to scanranges used for monitoring plc items.
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IItemScanrange.Scansize">
+            <summary>
+            Gets the scansize.
+            </summary>
+            <value>The scansize.</value>
+        </member>
+        <member name="P:Hollander.IO.Plc.IItemScanrange.StartAddress">
+            <summary>
+            Gets the start address.
+            </summary>
+            <value>The start address.</value>
+        </member>
+        <member name="M:Hollander.IO.Plc.IItemScanrange.Copy">
+            <summary>
+            Copies this instance.
+            </summary>
+            <returns>A copy this instance</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IItemScanrange.ReadValues(System.Byte[])">
+            <summary>
+            Reads the values and passes the specific values to the individual items.
+            </summary>
+            <param name="readBuffer">The read buffer.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.IItemScanrange.AddMonitorItem(Hollander.IO.Plc.ItemChangeHandler)">
+            <summary>
+            Adds the monitor item.
+            </summary>
+            <param name="itemChangeHandler">The item change handler.</param>
+            <returns>True if the item could be added to scanrange, false otherwise.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IItemScanrange.SetSingleValue(Hollander.IO.Plc.IPlcItemAddress,System.Object)">
+            <summary>
+            Sets a single value.
+            </summary>
+            <param name="plcItemAddress">The PLC item address.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.IncompatiblePlcTypeException">
+            <summary>
+            Exception thrown when an incompatible PLC is used
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IncompatiblePlcTypeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.IncompatiblePlcTypeException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IncompatiblePlcTypeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.IncompatiblePlcTypeException"/> class.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.IncompatiblePlcTypeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.IncompatiblePlcTypeException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the
+            <paramref name="innerException" /> parameter is not a null reference, the current exception
+            is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.IncompatiblePlcTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.IncompatiblePlcTypeException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.InvalidAddressException">
+            <summary>
+            Exception to be thrown when an address is specified that has an invalid syntax.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.InvalidAddressException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.InvalidAddressException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.InvalidAddressException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.InvalidAddressException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.InvalidAddressException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.InvalidAddressException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the <paramref name="innerException" />
+            parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a
+            catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.InvalidAddressException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.InvalidAddressException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.IPlcItemAddress">
+            <summary>
+            Address of a plc item.
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcItemAddress.Datatype">
+            <summary>
+            Gets the datatype.
+            </summary>
+            <value>The datatype.</value>
+        </member>
+        <member name="T:Hollander.IO.Plc.IPlcMonitor">
+            <summary>
+            Common interface
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcMonitor.Running">
+            <summary>
+            Gets whether the monitor is running
+            </summary>
+            <value>
+              <c>true</c> if running; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcMonitor.AutoReconnect">
+            <summary>
+            Gets or sets a value indicating whether to automatically reconnect.
+            </summary>
+            <value>
+              <c>true</c> if to automatically reconnect; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:Hollander.IO.Plc.IPlcMonitor.ConnectionStateChanged">
+            <summary>
+            Event indicating that the state of the connection has changed
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.Start">
+            <summary>
+            Starts this instance.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.Stop">
+            <summary>
+            Stops this instance.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.AddItemToMonitor(Hollander.IO.Plc.IPlcItemAddress,Hollander.IO.Plc.PlcItemValueChangedHandler)">
+            <summary>
+            Method adds an item to the plc communication module to be monitored. The method that needs to be passed
+            will be called when the value of the item changes.
+            </summary>
+            <param name="plcItemAddress">The address of the item to monitor.</param>
+            <param name="plcItemValueChangedHandler">The method called upon changes in the value of the monitored item.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.AddItemToMonitor(System.String,Hollander.IO.Plc.PlcItemValueChangedHandler)">
+            <summary>
+            Method adds an item to the plc communication module to be monitored. The method that needs to be passed
+            will be called when the value of the item changes.
+            </summary>
+            <param name="plcItemAddress">The address of the item to monitor.</param>
+            <param name="plcItemValueChangedHandler">The method called upon changes in the value of the monitored item.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.WriteDigital(System.String,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcMonitor.WriteDigital(Hollander.IO.Plc.IPlcItemAddress,System.Boolean)">
+            <summary>
+            Method writes the given digital value to the controller at the given address.
+            </summary>
+            <param name="startAddress">The address to write at.</param>
+            <param name="value">The value to write.</param>
+            <returns>Returns whether the value could be written.</returns>
+        </member>
+        <member name="T:Hollander.IO.Plc.IPlcTag`1">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <remarks>
+             In a unity configuration remember to register this by IPlcTag`1 in stead of IPlcTag[]
+             </remarks>
+        </member>
+        <member name="E:Hollander.IO.Plc.IPlcTag`1.ValueChanged">
+            <summary>
+            Event that is raised when the value of the plc tag is changed
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcTag`1.PlcItemAddress">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcTag`1.HasPlcMonitor">
+            <summary>
+            Gets a value indicating whether this instance has PLC monitor.
+            </summary>
+            <value>
+            <c>true</c> if this instance has PLC monitor; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcTag`1.Value">
+            <summary>
+            Gets or sets the value. The value returned is the cached value. When the value is set, it is written to the Controller
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag`1.WriteValue(`0)">
+            <summary>
+            Method writes a value and when the item is monitored, making sure that any object registered to
+            the ValueChanged event is notified.
+            </summary>
+            <param name="value">The value to write</param>
+            <returns>Returns whether or not it was possible to write to the item</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag`1.WriteValueAsync(`0)">
+            <summary>
+            Async version of <see cref="M:Hollander.IO.Plc.IPlcTag`1.WriteValue(`0)"/>
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag`1.ReadValue(`0@,System.Boolean)">
+            <summary>
+            Method reads the current value
+            </summary>
+            <param name="value">
+            The value that was read from controller or cache
+            </param>
+            <param name="readCachedValue">
+            Optional parameter to either read the cached value or the actual value from the controller.
+            </param>
+            <returns>Returns whether or not it was possible to read the item</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag`1.ReadValueAsync(System.Boolean)">
+            <summary>
+            Async version of <see cref="M:Hollander.IO.Plc.IPlcTag`1.ReadValue(`0@,System.Boolean)"/>
+            </summary>
+        </member>
+        <member name="T:Hollander.IO.Plc.IPlcTag">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.IPlcTag.TagType">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag.WriteValue(System.Object)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.IPlcTag.ReadValue(System.Object@,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <param name="readCachedValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hollander.IO.Plc.ItemChangeHandler">
+            <summary>
+            Class handles the changes of a value for a plc item.
+            </summary>
+        </member>
+        <member name="E:Hollander.IO.Plc.ItemChangeHandler.PlcValueChanged">
+            <summary>
+            Occurs when [PLC value changed].
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.ItemChangeHandler.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:Hollander.IO.Plc.ItemChangeHandler.ItemAddress">
+            <summary>
+            Gets or sets the item address.
+            </summary>
+            <value>The item address.</value>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.#ctor(Hollander.IO.Plc.IPlcItemAddress,Hollander.IO.Plc.PlcItemValueChangedHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.ItemChangeHandler" /> class.
+            </summary>
+            <param name="plcItemAddress">The address of the item.</param>
+            <param name="plcItemValueChangedHandler">The delegate to call when the value of the item has changed.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Boolean)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Byte)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Int16)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Int32)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Int64)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Double)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.String)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.SetValue(System.Object)">
+            <summary>
+            Sets the value.
+            </summary>
+            <param name="value">The new value.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.ItemChangeHandler.UpdateValue(System.Object)">
+            <summary>
+            Updates the value.
+            </summary>
+            <param name="value">The value to be updated</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.NoValueSetException">
+            <summary>
+            Exception used when no value has been set.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.NoValueSetException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.NoValueSetException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.NoValueSetException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.NoValueSetException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.NoValueSetException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.NoValueSetException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the
+            <paramref name="innerException" /> parameter is not a null reference (Nothing in Visual Basic),
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.NoValueSetException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.NoValueSetException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcCommunicationException">
+            <summary>
+            Thrown when the communication with the PLC unexpectedly fails
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcCommunicationException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcCommunicationException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcCommunicationException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcCommunicationException"/> class.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcCommunicationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcCommunicationException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the
+            <paramref name="innerException" /> parameter is not a null reference,
+            the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcCommunicationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcCommunicationException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcDatatype">
+            <summary>
+            Enumerate defining the various datatypes
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.NotDefined">
+            <summary>
+            An undefined datatype
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.Bit">
+            <summary>
+            The datatype depicting a bit/boolean
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.Byte">
+            <summary>
+            The datatype depicting an 8 bit integer (signed/unsigned)
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.Word">
+            <summary>
+            The datatype depicting a 16 bit integer (signed/unsigned)
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.DWord">
+            <summary>
+            The datatype depicting a 32 bit integer (signed/unsigned)
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.Float">
+            <summary>
+            The datatype depicting a floating point decimal
+            </summary>
+        </member>
+        <member name="F:Hollander.IO.Plc.PlcDatatype.String">
+            <summary>
+            The datatype depicting a string
+            </summary>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcItemValueChangedHandler">
+            <summary>
+            Delegate used notify that a value has changed
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Hollander.IO.Plc.PlcItemValueChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcTag`1">
+            <summary>
+            Class that represents a tag.
+            </summary>
+            <typeparam name="T">The type of the tag being monitored.</typeparam>
+            <seealso cref="T:Hollander.IO.Plc.IPlcTag`1" />
+        </member>
+        <member name="E:Hollander.IO.Plc.PlcTag`1.ValueChanged">
+            <summary>
+            Event that is raised when the value of the plc tag is changed
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcTag`1.Value">
+            <summary>
+            Gets or sets the value. The value returned is the cached value or its default.
+            When the value is set, it is written to the Controller
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcTag`1.PlcItemAddress">
+            <summary>
+            Gets the PLC item address.
+            </summary>
+            <value>
+            The PLC item address.
+            </value>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcTag`1.HasPlcMonitor">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.#ctor(System.String,Hollander.IO.Plc.IController,Hollander.IO.Plc.IPlcMonitor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcTag`1"/> class.
+            </summary>
+            <param name="plcItemAddress">The PLC item address.</param>
+            <param name="controller">The controller.</param>
+            <param name="monitor">Set the PLC monitor to activate the item monitor</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.#ctor(Hollander.IO.Plc.IPlcItemAddress,Hollander.IO.Plc.IController,Hollander.IO.Plc.IPlcMonitor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcTag`1"/> class.
+            </summary>
+            <param name="plcItemAddress">The PLC item address.</param>
+            <param name="controller">The controller.</param>
+            <param name="monitor">Set the PLC monitor to activate the item monitor</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.WriteValue(`0)">
+            <summary>
+            Method writes a value to the monitored item, making sure that any object registered to
+            the ValueChanged event is notified.
+            </summary>
+            <param name="value"></param>
+            <returns>Returns whether or not it was possible to write to the item</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.WriteValue(System.Object)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.WriteValueAsync(`0)">
+            <summary>
+            An asynchronous version of WriteValue, method writes a value to the monitored item,
+            making sure that any object registered to the ValueChanged event is notified.
+            </summary>
+            <param name="value"></param>
+            <returns>Returns whether or not it was possible to write to the item</returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.ReadValue(`0@,System.Boolean)">
+            <summary>
+            Method reads the current value
+            </summary>
+            <param name="value">The value that was read</param>
+            <param name="readCachedValue">Optional parameter to either read the cached value or the actual value from the controller. Default <c>false</c>.</param>
+            <returns>
+            Returns whether or not it was possible to read the item
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.ReadValue(System.Object@,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <param name="readCachedValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.ReadValueAsync(System.Boolean)">
+            <summary>
+            An asynchronous version of ReadValue, method reads the current value
+            </summary>
+            <param name="readCachedValue">Optional parameter to either read the cached value or the actual value from the controller. Default <c>false</c>.</param>
+            <returns>
+            Returns whether or not it was possible to read the item and the value that was read.
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.OnValueChanged(Hollander.IO.Plc.ValueChangedEventArgs{`0})">
+            <summary>
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag`1.ReportValueChange(`0)">
+            <summary>
+            With this the value change is reported and ensures that <see cref="P:Hollander.IO.Plc.PlcTag`1.Value"/> has the correct value with or without monitor and in case of a derived class.
+            Even when nobody is registration to <see cref="E:Hollander.IO.Plc.PlcTag`1.ValueChanged"/> this should be called, just in case the registration is temporary removed.
+            </summary>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcTag">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Hollander.IO.Plc.PlcTag.TagType">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag.#ctor(System.Type)">
+            <summary>
+            </summary>
+            <param name="dataType"></param>
+            <remarks>
+            In a unity configuration remember to register this by PlcTag`1 in stead of PlcTag[]
+            </remarks>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag.WriteValue(System.Object)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcTag.ReadValue(System.Object@,System.Boolean)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+            <param name="readCachedValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hollander.IO.Plc.CallbackFunction">
+            <summary>
+            Description to be set by Danny Abbenhuis
+            </summary>
+        </member>
+        <member name="T:Hollander.IO.Plc.PlcValueChangedGenerator">
+            <summary>
+            Description to be set by Danny Abbenhuis
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcValueChangedGenerator.#ctor(Hollander.IO.Plc.IPlcMonitor,Hollander.IO.Plc.IPlcItemAddress,System.Boolean,Hollander.IO.Plc.CallbackFunction)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.PlcValueChangedGenerator" /> class.
+            </summary>
+            <param name="plcMonitor">The PLC monitor.</param>
+            <param name="address">Address to be monitored.</param>
+            <param name="risingEdge">Whether the callback function should be called on the rising edge or the falling edge.</param>
+            <param name="callBack">The callback function, that will be called when the proper state arises.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.PlcValueChangedGenerator.PlcValueChangedNotification(System.Object,Hollander.IO.Plc.PlcItemValueChangedEventArgs)">
+            <summary>
+            PLCs the value changed notification.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:Hollander.IO.Plc.PlcItemValueChangedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="T:Hollander.IO.Plc.TypeNotSupportedException">
+            <summary>
+            Exception thrown when a method is called to read or write a value of a type that is not supported by a controller.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.TypeNotSupportedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.TypeNotSupportedException"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.IO.Plc.TypeNotSupportedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.TypeNotSupportedException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Hollander.IO.Plc.TypeNotSupportedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.TypeNotSupportedException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the
+            <paramref name="innerException" /> parameter is not a null reference (Nothing in Visual
+            Basic), the current exception is raised in a catch block that handles the inner exception.
+            </param>
+        </member>
+        <member name="M:Hollander.IO.Plc.TypeNotSupportedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.IO.Plc.TypeNotSupportedException"/> class.
+            </summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+    </members>
+</doc>

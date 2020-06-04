@@ -1,0 +1,66 @@
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess 4 with Framework.csprojAssemblyReference.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\MainWindow.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\App.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_MarkupCompile.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_MarkupCompile.lref
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Chess_4_with_Framework.exe.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Chess_4_with_Framework.exe
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Chess_4_with_Framework.pdb
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\MainWindow.baml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.g.resources
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.Properties.Resources.resources
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess 4 with Framework.csproj.GenerateResource.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.exe
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.pdb
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\OpcUa.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\log4Net.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.Common.Logging.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.Common.Logging.Log4net.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.IO.Plc.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.IO.Plc.OpcUa.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\log4net.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Opc.Ua.Core.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.Common.Logging.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.Common.Logging.Log4net.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Hollander.IO.Plc.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\log4net.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\bin\Debug\Opc.Ua.Core.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_Content.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess 4 with Framework.csproj.CopyComplete
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess 4 with Framework.csprojAssemblyReference.cache
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\MainWindow.g.cs
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\App.g.cs
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_Content.g.cs
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_MarkupCompile.cache
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework_MarkupCompile.lref
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.exe
+D:\School\Stage 1 Hollander Techniek\OneDrive - Hollander Techniek\Chess 4 with Framework\obj\Debug\Chess_4_with_Framework.pdb
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\OpcUa.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\log4Net.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Chess_4_with_Framework.exe.config
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Chess_4_with_Framework.exe
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Chess_4_with_Framework.pdb
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.Common.Logging.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.Common.Logging.Log4net.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.IO.Plc.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.IO.Plc.OpcUa.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\log4net.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Opc.Ua.Core.dll
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.Common.Logging.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.Common.Logging.Log4net.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Hollander.IO.Plc.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\log4net.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\bin\Debug\Opc.Ua.Core.xml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess 4 with Framework.csprojAssemblyReference.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\MainWindow.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\App.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework_Content.g.cs
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework_MarkupCompile.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework_MarkupCompile.lref
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\MainWindow.baml
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework.g.resources
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework.Properties.Resources.resources
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess 4 with Framework.csproj.GenerateResource.cache
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess 4 with Framework.csproj.CopyComplete
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework.exe
+D:\OneDrive - Hollander Techniek\Chess 4 with Framework - kopie\obj\Debug\Chess_4_with_Framework.pdb

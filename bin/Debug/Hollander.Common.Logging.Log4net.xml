@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hollander.Common.Logging.Log4net</name>
+    </assembly>
+    <members>
+        <member name="T:Hollander.Common.Logging.Log4net.Log4netAdapter">
+            <summary>
+            The Log4netAdapter implementing the interface <see cref="T:Hollander.Common.Logging.ILog"/> to log messages into the log4net framework.
+            </summary>
+            <remarks>
+            When posible all methodes use the log4net format methodes like DebugFormat for optimization.
+            It delays string format until really needed due to its log level.
+            </remarks>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapter.#ctor(log4net.ILog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.Common.Logging.Log4net.Log4netAdapter"/> class.
+            </summary>
+            <param name="logger">The ILog interface is use by application to log messages into the log4net framework.</param>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapter.Log(Hollander.Common.Logging.LogEntry)">
+            <summary>
+            Logs a message with the provided <see cref="T:Hollander.Common.Logging.LogEventType" /> level.
+            Additional helpers are supplied using <see cref="T:Hollander.Common.Logging.Extensions" />.
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="T:Hollander.Common.Logging.Log4net.Log4netAdapterFactory">
+            <summary>
+            This class is used by client applications to request logger instances.
+            </summary>
+            <seealso cref="T:Hollander.Common.Logging.IAdapterFactory" />
+        </member>
+        <member name="F:Hollander.Common.Logging.Log4net.Log4netAdapterFactory._loggers">
+            <summary>
+            For log4net the advise is one static logger for each type.
+            </summary>
+        </member>
+        <member name="P:Hollander.Common.Logging.Log4net.Log4netAdapterFactory.UseStaticLoggers">
+            <summary>
+            For log4net the advise is one static logger for each type.
+            The most common way to achieve this is, creating a static <see cref="T:Hollander.Common.Logging.ILog"/> field with the <see cref="T:Hollander.Common.Logging.LogManager"/>.
+            With static loggers it uses a <see cref="T:System.Collections.Generic.Dictionary`2"/> for retrieving static loggers.
+            This becomes handy when using dependency injection and the loggers are resolved during startup.
+            </summary>
+            <value>
+            When <c>false</c> the <see cref="T:Hollander.Common.Logging.Log4net.Log4netAdapterFactory"/> is no longer responsible for maintaining static loggers.
+            This is the most common usage in combination with the <see cref="T:Hollander.Common.Logging.LogManager"/>.
+            When <c>true</c> the <see cref="T:Hollander.Common.Logging.Log4net.Log4netAdapterFactory"/> returns static loggers.
+            This works well for applications where loggers are initialized on startup of the application.
+            In a web application where most of the objects have a per request lifecycle this could become a problem.
+            In this case the <see cref="T:System.Collections.Generic.Dictionary`2"/> is used on each request.
+            This depends on how objects are created using factories or dependency injection and how they are resolved.
+            </value>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapterFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Hollander.Common.Logging.Log4net.Log4netAdapterFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapterFactory.GetLogger(System.String)">
+            <summary>
+            Retrieves or creates a named logger.
+            </summary>
+            <param name="name">The name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapterFactory.GetLogger(System.Type)">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.ILogManager.GetLogger(System.String)" />.
+            </summary>
+            <param name="type">The full name will be used as the name of the logger to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hollander.Common.Logging.Log4net.Log4netAdapterFactory.GetLogger``1">
+            <summary>
+            Shorthand for <see cref="M:Hollander.Common.Logging.ILogManager.GetLogger(System.String)" />.
+            </summary>
+            <typeparam name="T">The type full name will be used as the name of the logger to retrieve.</typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
